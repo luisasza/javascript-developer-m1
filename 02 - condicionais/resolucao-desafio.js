@@ -1,25 +1,33 @@
-// Faça um programa para calcular o valor de uma viagem.
+// declara as variáveis
+let precoCombustivel = 0;
+let consumoCombustivel = 0;
 
-// Você terá 5 variáveis. Sendo elas:
-//  1 - Preço do etanol;
-//  2 - Preço do gasolina;
-//  3 - O tipo de combustível que está no seu carro;
-//  4 - Gasto médio de combustível do carro por KM;
-//  5 - Distância em KM da viagem;
+// cria a função que calcula o valor da viagem
+const calculaValorViagem = (distanciaViagem) => (distanciaViagem / consumoCombustivel) * precoCombustivel;
+  
+// cria a função que seleciona Gasolina ou Etanol
+const gasolinaOuEtanol = (combustivel, distanciaViagem) => {
 
-// Imprima no console o valor que será gasto para realizar esta viagem.
-const precoEtanol = 5.79;
-const precoGasolina = 6.66;
-const kmPorLitros = 10;
-const distanciaEmKm = 100;
-const tipoCombustivel = 'Gasolina';
+  switch (combustivel.toLowerCase()) {
+    
+    case "etanol":
+      precoCombustivel = 4.88;
+      consumoCombustivel = 10;
+      return `Combustível: ${combustivel}.
+      Valor da viagem: R$ ${calculaValorViagem(distanciaViagem).toFixed(2)}`;
+    case "gasolina":
+      precoCombustivel = 5.88;
+      consumoCombustivel = 8;
+      return `Combustível: ${combustivel}.
+      Valor da viagem: R$ ${calculaValorViagem(distanciaViagem).toFixed(2)}`;
+    default:
+      return `Combustível: ${combustivel} não reconhecido`;
+  }
 
-const litrosConsumidos = distanciaEmKm / kmPorLitros;
-
-if (tipoCombustivel === 'Etanol') {
-  const valorGasto = litrosConsumidos * precoEtanol;
-  console.log(valorGasto.toFixed(2));
-} else {
-  const valorGasto = litrosConsumidos * precoGasolina;
-  console.log(valorGasto.toFixed(2));
 }
+
+// Main
+(function () {
+  
+  console.log(gasolinaOuEtanol("etanol", 200));
+})();

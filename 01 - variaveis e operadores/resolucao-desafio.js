@@ -1,8 +1,6 @@
+let precoCombustivel = 10;
+const consumoCombustivelPorKm = 10;
+let distanciaPercorridaEmKm = 100;
+let valorTotalGasto = (distanciaPercorridaEmKm / consumoCombustivelPorKm) * precoCombustivel;
 
-const precoCombustivel = 5.79;
-const kmPorLitros = 12;
-const distanciaEmKm = 100;
-
-const litrosConsumidos = distanciaEmKm / kmPorLitros;
-const valorGasto = litrosConsumidos * precoCombustivel;
-console.log(valorGasto.toFixed(2));
+console.log(`Esta viagem custará R$ ${valorTotalGasto.toFixed(2)}`);

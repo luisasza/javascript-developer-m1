@@ -7,3 +7,10 @@ Você terá 3 variáveis. Sendo elas:
  3 - Distância em KM da viagem;
 
 Imprima no console o valor que será gasto para realizar esta viagem.
+
+let precoCombustivel = 5.8;
+const consumoCombustivelPorKm = 9;
+let distanciaPercorridaEmKm = 88;
+let valorTotalGasto = (distanciaPercorridaEmKm / consumoCombustivelPorKm) * precoCombustivel;
+
+console.log(`Esta viagem custará ${valorTotalGasto.toFixed(2)}`);
